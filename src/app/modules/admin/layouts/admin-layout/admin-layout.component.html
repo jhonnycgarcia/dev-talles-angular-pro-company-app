@@ -7,8 +7,10 @@
   /> -->
 
   <lib-jgx-side-menu
+    [title]="'TW Corp'"
+    [subtitle]="'SA.'"
     [isAuthenticated]="isAuthenticated()"
-    [titleColor]="TitleColor.RED"
+    [titleColor]="TitleColor.BLUE"
     (onSignIn)="onLogin()"
     (onSignOut)="onLogout()"
   />
