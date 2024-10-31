@@ -3,13 +3,16 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from "../../shared/components/side-menu/side-menu.component";
 
+import { JgxSideMenuComponent, TitleColor } from 'jgx-side-menu';
+
 @Component({
   selector: 'app-admin-layout',
   standalone: true,
   imports: [
     CommonModule,
     RouterModule,
-    SideMenuComponent
+    SideMenuComponent,
+    JgxSideMenuComponent,
 ],
   templateUrl: './admin-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,6 +20,7 @@ import { SideMenuComponent } from "../../shared/components/side-menu/side-menu.c
 export default class AdminLayoutComponent {
 
   public isAuthenticated = signal<boolean>(false);
+  public TitleColor = TitleColor;
 
   onLogin() {
     this.isAuthenticated.set(true);
